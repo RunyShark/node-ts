@@ -19,11 +19,15 @@
   },
   "homepage": "https://github.com/RunyShark/ts-node#readme",
   "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "eslint": "^8.37.0"
   },
   "dependencies": {
-    "nodemon": "^2.0.22"
+    "colors": "^1.4.0",
+    "nodemon": "^2.0.22",
+    "yargs": "^17.7.1"
   }
 }
