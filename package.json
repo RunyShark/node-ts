@@ -1,0 +1,29 @@
+{
+  "name": "ts-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && nodemon dist/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RunyShark/ts-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RunyShark/ts-node/issues"
+  },
+  "homepage": "https://github.com/RunyShark/ts-node#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.37.0"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
