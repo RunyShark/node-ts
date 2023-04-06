@@ -22,11 +22,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CLI = void 0;
+exports.saveData = exports.CLI = void 0;
 exports.CLI = __importStar(require("./mensajes"));
-__exportStar(require("./guardarArchivo"), exports);
+exports.saveData = __importStar(require("./guardarArchivo"));
 //# sourceMappingURL=index.js.map

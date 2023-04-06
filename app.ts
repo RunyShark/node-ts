@@ -1,11 +1,14 @@
 import { log, clear } from 'console';
-import { CLIv2, Tareas, guardarDB } from './src';
+import { CLIv2, Tareas, saveData } from './src';
 
 clear();
 
 (async () => {
   let opt: number;
   const tareas = new Tareas();
+  const leerDb = saveData.leerDb();
+
+  if (leerDb) tareas.setTareas(leerDb);
 
   do {
     opt = await CLIv2.inquirerMenu();
@@ -22,7 +25,7 @@ clear();
         break;
       }
     }
-    guardarDB(tareas.listado);
+    saveData.guardarDB(tareas.listado);
     await CLIv2.pause();
   } while (opt !== 0);
 })();

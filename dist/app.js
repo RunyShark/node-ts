@@ -15,6 +15,9 @@ const src_1 = require("./src");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     let opt;
     const tareas = new src_1.Tareas();
+    const leerDb = src_1.saveData.leerDb();
+    if (leerDb)
+        tareas.setTareas(leerDb);
     do {
         opt = yield src_1.CLIv2.inquirerMenu();
         switch (opt) {
@@ -28,7 +31,7 @@ const src_1 = require("./src");
                 break;
             }
         }
-        (0, src_1.guardarDB)(tareas.listado);
+        src_1.saveData.guardarDB(tareas.listado);
         yield src_1.CLIv2.pause();
     } while (opt !== 0);
 }))();

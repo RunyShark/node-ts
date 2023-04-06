@@ -1,2 +1,2 @@
 export * as CLI from './mensajes';
-export * from './guardarArchivo';
+export * as saveData from './guardarArchivo';

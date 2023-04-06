@@ -10,6 +10,9 @@ class Tareas {
         this._listado = {};
         this._listado = {};
     }
+    setTareas(data) {
+        data.forEach((issue) => (this._listado[issue.id] = issue));
+    }
     crearTarea(desc) {
         const tarea = new tarea_1.Tarea(desc);
         this._listado[tarea.id] = tarea;
