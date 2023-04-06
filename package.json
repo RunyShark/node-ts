@@ -20,11 +20,18 @@
   },
   "homepage": "https://github.com/RunyShark/ts-node#readme",
   "devDependencies": {
+    "@types/color": "^3.0.3",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.15.11",
+    "@types/uuid": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "eslint": "^8.37.0"
   },
   "dependencies": {
-    "nodemon": "^2.0.22"
+    "color": "^4.2.3",
+    "inquirer": "^8.2.5",
+    "nodemon": "^2.0.22",
+    "uuid": "^9.0.0"
   }
 }
