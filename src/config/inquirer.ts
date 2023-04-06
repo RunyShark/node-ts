@@ -1,6 +1,8 @@
+import { Tarea } from './../models/tarea';
 import { clear, log } from 'console';
 import inquirer from 'inquirer';
 import readline from 'readline';
+import { DBProps } from '../models';
 
 export const inquirerMenu = async () => {
   clear();
@@ -49,4 +51,17 @@ export const readInput = async (message: string) => {
     },
   ]);
   return { desc };
+};
+
+export const listadoTareasBorrar = async (tarea: DBProps[]) => {
+  const { id } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'id',
+      message: 'Borrar',
+      choices: tarea.map(({ id, desc }) => ({ value: id, name: desc })),
+    },
+  ]);
+  log(id);
+  return id;
 };

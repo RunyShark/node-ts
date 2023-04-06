@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.readInput = exports.pause = exports.inquirerMenu = void 0;
+exports.listadoTareasBorrar = exports.readInput = exports.pause = exports.inquirerMenu = void 0;
 const console_1 = require("console");
 const inquirer_1 = __importDefault(require("inquirer"));
 const inquirerMenu = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -65,4 +65,17 @@ const readInput = (message) => __awaiter(void 0, void 0, void 0, function* () {
     return { desc };
 });
 exports.readInput = readInput;
+const listadoTareasBorrar = (tarea) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = yield inquirer_1.default.prompt([
+        {
+            type: 'list',
+            name: 'id',
+            message: 'Borrar',
+            choices: tarea.map(({ id, desc }) => ({ value: id, name: desc })),
+        },
+    ]);
+    (0, console_1.log)(id);
+    return id;
+});
+exports.listadoTareasBorrar = listadoTareasBorrar;
 //# sourceMappingURL=inquirer.js.map

@@ -12,7 +12,7 @@ clear();
 
   do {
     opt = await CLIv2.inquirerMenu();
-
+    log(opt);
     switch (opt) {
       case 1: {
         const { desc } = await CLIv2.readInput('Descriptión: ');
@@ -21,7 +21,22 @@ clear();
       }
 
       case 2: {
-        log(tareas.listado);
+        log(tareas.listadoTareas());
+        break;
+      }
+
+      case 3: {
+        log(tareas.listarPendientesCompletadas(true));
+        break;
+      }
+
+      case 4: {
+        log(tareas.listarPendientesCompletadas(false));
+        break;
+      }
+
+      case 7: {
+        tareas.borrarTarea(await CLIv2.listadoTareasBorrar(tareas.listado));
         break;
       }
     }

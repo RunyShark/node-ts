@@ -20,6 +20,7 @@ const src_1 = require("./src");
         tareas.setTareas(leerDb);
     do {
         opt = yield src_1.CLIv2.inquirerMenu();
+        (0, console_1.log)(opt);
         switch (opt) {
             case 1: {
                 const { desc } = yield src_1.CLIv2.readInput('Descriptión: ');
@@ -27,7 +28,19 @@ const src_1 = require("./src");
                 break;
             }
             case 2: {
-                (0, console_1.log)(tareas.listado);
+                (0, console_1.log)(tareas.listadoTareas());
+                break;
+            }
+            case 3: {
+                (0, console_1.log)(tareas.listarPendientesCompletadas(true));
+                break;
+            }
+            case 4: {
+                (0, console_1.log)(tareas.listarPendientesCompletadas(false));
+                break;
+            }
+            case 7: {
+                tareas.borrarTarea(yield src_1.CLIv2.listadoTareasBorrar(tareas.listado));
                 break;
             }
         }

@@ -1,3 +1,4 @@
+import { log } from 'console';
 import { Tarea } from './tarea';
 
 export interface DBProps {
@@ -19,6 +20,28 @@ export class Tareas {
 
   constructor() {
     this._listado = {};
+  }
+
+  borrarTarea(id = '') {
+    if (this._listado[id]) {
+      delete this._listado[id];
+    }
+  }
+
+  listadoTareas() {
+    this.listado.forEach(({ desc, completadorEn }, i) =>
+      log(`${i + 1}. ${desc} :: ${completadorEn ? 'complete' : 'pendiente'}`)
+    );
+  }
+
+  listarPendientesCompletadas(completadas: boolean) {
+    this.listado.forEach(({ desc, completadorEn }, i) => {
+      if (completadas && completadorEn) {
+        log(`${i + 1}. ${desc} ::  complete`);
+      } else if (!completadas && !completadorEn) {
+        log(`${i + 1}. ${desc} ::  pendiente`);
+      }
+    });
   }
 
   setTareas(data: DBProps[]) {
